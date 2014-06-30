@@ -1,11 +1,7 @@
 <form role="form" ng-submit="addItem()">
   <div class="form-group">
     <label>Name</label>
-    <input name="name" type="text" class="form-control" placeholder="Enter name" ng-model="item.name">
-  </div>
-  <div class="form-group">
-    <label>Value</label>
-    <input name="value1" type="text" class="form-control" placeholder="Enter value" ng-model="item.val">
+    <input name="name" type="text" class="form-control" placeholder="Enter sentiment value" ng-model="item.sentiment">
   </div>
   <button type="submit" class="btn btn-default">Add</button>
 </form>
@@ -15,8 +11,7 @@
     <tr>
       <th>#</th>
       <th>Time</th>
-      <th>Name</th>
-      <th>Value</th>
+      <th>Sentiment</th>
       <th></th>
     </tr>
   </thead>
@@ -24,8 +19,7 @@
     <tr ng-if="items" ng-repeat="item in items | reverse">
       <td>{{items.length - $index}}</td>
       <td>{{item.addTime.slice(0,10) + ' ' + item.addTime.slice(11,19)}}</td>
-      <td>{{item.name}}</td>
-      <td>{{item.val}}</td>
+      <td>{{item.sentiment}}</td>
       <td>
         <button type="button" class="close" aria-hidden="true" 
           ng-click="removeItem(item);" ng-if="item.removable">&times;
