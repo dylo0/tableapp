@@ -17,4 +17,11 @@ angular.module('tableappApp', [
       });
       
     $locationProvider.html5Mode(true);
+  })
+
+  .filter('reverse', function() {
+    return function(items) {
+      var copy = [].concat(items);
+      return copy.reverse();
+    };
   });
